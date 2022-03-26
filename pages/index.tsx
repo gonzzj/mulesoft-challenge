@@ -20,7 +20,7 @@ const Home: NextPage = () => (
             <InputDependencies />
           </Grid>
           <Grid item xs={8}>
-            xs=8
+            Network graph
           </Grid>
         </Grid>
       </Container>
