@@ -2,20 +2,27 @@ import type { NextPage } from 'next'
 import HeadMeta from '../components/PageCommons/HeadMeta';
 import styles from '../styles/Home.module.scss'
 import Footer from '../components/PageCommons/Footer';
+import Title from '../components/Title';
+import Grid from '@mui/material/Grid';
+import Container from '@mui/material/Container';
 
 const Home: NextPage = () => (
   <div className={styles.container}>
     <HeadMeta />
 
     <main className={styles.main}>
-      <h1 className={styles.title}>
-        The Dependencies Graph
-      </h1>
+      <Container maxWidth="lg">
+        <Title label={'The Dependencies Graph'} description={'Get started by editing'} />
 
-      <p className={styles.description}>
-        Get started by editing{' '}
-        <code className={styles.code}>pages/index.tsx</code>
-      </p>
+        <Grid container spacing={2}>
+          <Grid item xs={4}>
+            xs=4
+          </Grid>
+          <Grid item xs={8}>
+            xs=8
+          </Grid>
+        </Grid>
+      </Container>
     </main>
 
     <Footer />
