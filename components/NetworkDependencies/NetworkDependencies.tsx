@@ -5,7 +5,13 @@ import Box from "@mui/material/Box";
 const NetworkDependencies = () => {
 
   return (
-    <Box sx={{ height: 460 }}>
+    <Box 
+      sx={{ 
+        height: 456,
+        border: '1px solid rgba(0, 0, 0, 0.23)',
+        borderRadius: 1
+      }}
+    >
       <ResponsiveNetwork
         data={data}
         linkDistance={(e: any) => e.distance}

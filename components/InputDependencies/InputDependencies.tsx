@@ -9,7 +9,9 @@ const InputDependencies = () => {
       sx={{ 
         display: 'flex',
         alignItems: 'flex-end',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        height: 456,
+        justifyContent: 'space-between'
       }}
     >
       <TextField
@@ -23,7 +25,6 @@ const InputDependencies = () => {
       />
       <Button 
         variant="contained"
-        sx={{ mt: 2 }}
       >
         Submit dependencies
       </Button>
