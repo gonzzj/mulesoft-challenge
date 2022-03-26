@@ -5,6 +5,7 @@ import Footer from '../components/PageCommons/Footer';
 import Title from '../components/Title';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
+import InputDependencies from '../components/InputDependencies';
 
 const Home: NextPage = () => (
   <div className={styles.container}>
@@ -16,7 +17,7 @@ const Home: NextPage = () => (
 
         <Grid container spacing={2}>
           <Grid item xs={4}>
-            xs=4
+            <InputDependencies />
           </Grid>
           <Grid item xs={8}>
             xs=8
