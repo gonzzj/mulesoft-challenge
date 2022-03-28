@@ -19,7 +19,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <Container maxWidth="lg">
-          <Title label={'The Dependencies Graph'} description={'Add dependency commands in order to create the exact graph in the right square'} />
+          <Title label={'The Dependencies Graph'} description={'Add dependency commands in order to create the exact graph in the right square (case sensitive)'} />
 
           <Grid container spacing={2}>
             <Grid item xs={4}>

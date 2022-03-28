@@ -12,6 +12,7 @@ export const isCyclic = (vertex: string, visited: Stack, recStack: Stack, links:
 
   const nodeNeighbors: NodeLink[] = [...links.filter((link: NodeLink) => link.source === vertex)];
 
+  console.log(nodeNeighbors);
   for (const currentNode of nodeNeighbors) {
     if (!visited[currentNode.target] && isCyclic(currentNode.target, visited, recStack, links)) {
       return true;

@@ -3,7 +3,7 @@ import random from 'lodash/random';
 
 export const formatDependencies = (value: string): Network => {
   const dependencies = [];
-  for (const dependency of value.split("\n")) {
+  for (const dependency of value.trim().split("\n")) {
     dependencies.push(dependency.split(" ").filter((item) => item !== 'DEPENDS'));
   }
 

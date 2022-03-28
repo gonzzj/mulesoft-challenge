@@ -11,7 +11,7 @@ interface InputDependenciesProps {
   setData: Dispatch<SetStateAction<Network | undefined>>
 }
 
-const InputDependencies = ({ setData }: InputDependenciesProps) => {
+const InputDependencies: React.FC<InputDependenciesProps> = ({ setData }) => {
   const [value, setValue] = useState<string>('');
   const [helperText, setHelperText] = useState<string>('');
   const [error, setError] = useState<boolean>(false);

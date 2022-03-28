@@ -7,7 +7,7 @@ interface NetworkDependenciesProps {
   data?: Network
 }
 
-const NetworkDependencies = ({ data }: NetworkDependenciesProps) => (
+const NetworkDependencies: React.FC<NetworkDependenciesProps> = ({ data }) => (
   <Box 
     sx={{ 
       height: 456,
