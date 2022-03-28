@@ -1,7 +1,7 @@
 import React from 'react';
 import { ResponsiveNetwork } from '@nivo/network'
 import Box from "@mui/material/Box";
-import { Network } from '../../types/dependency';
+import { Network, NodeDependency, NodeLink } from '../../types/dependency';
 
 interface NetworkDependenciesProps {
   data?: Network
@@ -18,23 +18,13 @@ const NetworkDependencies = ({ data }: NetworkDependenciesProps) => (
     {data && (
       <ResponsiveNetwork
         data={data}
-        linkDistance={(e: any) => e.distance}
+        linkDistance={(e: NodeLink) => e.distance}
         centeringStrength={0.3}
         repulsivity={20}
-        nodeSize={(n: any) => n.size}
-        activeNodeSize={(n: any) => 1.5 * n.size}
-        nodeColor={(e: any) => e.color}
-        nodeBorderWidth={1}
-        nodeBorderColor={{
-          from: 'color',
-          modifiers: [
-              [
-                  'darker',
-                  0.8
-              ]
-          ]
-        }}
-        linkThickness={(n: any) => 2+2 * n.target.data.height}
+        nodeSize={(n: NodeDependency) => n.size}
+        activeNodeSize={(n: NodeDependency) => 1.5 * n.size}
+        nodeColor={(e: NodeDependency) => e.color}
+        linkThickness={2}
         linkBlendMode="multiply"
         motionConfig="wobbly"
       />
