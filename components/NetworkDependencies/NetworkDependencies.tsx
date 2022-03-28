@@ -1,3 +1,4 @@
+import React from 'react';
 import { ResponsiveNetwork } from '@nivo/network'
 import Box from "@mui/material/Box";
 import { Network } from '../../types/dependency';
@@ -41,4 +42,4 @@ const NetworkDependencies = ({ data }: NetworkDependenciesProps) => (
   </Box>
 );
 
-export default NetworkDependencies;
+export default React.memo(NetworkDependencies);

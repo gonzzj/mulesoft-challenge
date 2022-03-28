@@ -1,4 +1,4 @@
-import { Network, NodeLink, NodeDependency } from './../types/dependency';
+import { Network, NodeLink, NodeDependency } from '../types/dependency';
 import random from 'lodash/random';
 
 export const formatDependencies = (value: string): Network => {
