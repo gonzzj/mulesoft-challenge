@@ -19,7 +19,7 @@ const NetworkDependencies = ({ data }: NetworkDependenciesProps) => (
         data={data}
         linkDistance={(e: any) => e.distance}
         centeringStrength={0.3}
-        repulsivity={6}
+        repulsivity={100}
         nodeSize={(n: any) => n.size}
         activeNodeSize={(n: any) => 1.5 * n.size}
         nodeColor={(e: any) => e.color}

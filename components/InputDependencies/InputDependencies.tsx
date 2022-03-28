@@ -3,6 +3,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import { validateDependencies } from '../../helpers/validations';
+import { formatDependencies } from "../../helpers/dependencies";
 import { Network } from "../../types/dependency";
 
 const PLACEHOLDER_TEXTAREA = "A DEPENDS B C\nB DEPENDS F G\nC DEPENDS G\nG DEPENDS X Y Z\nD DEPENDS Z";
@@ -29,10 +30,7 @@ const InputDependencies = ({ setData }: InputDependenciesProps) => {
       setError(!valid);
       setHelperText(message);
     } else {
-      setData({
-        nodes: [],
-        links: [],
-      });
+      setData(formatDependencies(value));
     }
   };
 
