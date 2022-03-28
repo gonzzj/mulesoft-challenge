@@ -11,7 +11,7 @@ const Title: React.FC<PageTitleProps> = ({ label, description }) => (
       {label}
     </Typography>
     {description && (
-      <Typography variant={'h5'} sx={{ m: 4 }} align={'center'}>
+      <Typography variant={'h6'} sx={{ m: 4 }} align={'center'}>
         {description}
       </Typography>
     )}

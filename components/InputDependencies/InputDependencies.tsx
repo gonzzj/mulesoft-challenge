@@ -1,12 +1,17 @@
-import { SyntheticEvent, useState } from "react";
+import { Dispatch, SetStateAction, SyntheticEvent, useState } from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import { validateDependencies } from '../../helpers/validations';
+import { Network } from "../../types/dependency";
 
 const PLACEHOLDER_TEXTAREA = "A DEPENDS B C\nB DEPENDS F G\nC DEPENDS G\nG DEPENDS X Y Z\nD DEPENDS Z";
 
-const InputDependencies = () => {
+interface InputDependenciesProps {
+  setData: Dispatch<SetStateAction<Network | undefined>>
+}
+
+const InputDependencies = ({ setData }: InputDependenciesProps) => {
   const [value, setValue] = useState<string>('');
   const [helperText, setHelperText] = useState<string>('');
   const [error, setError] = useState<boolean>(false);
@@ -19,6 +24,16 @@ const InputDependencies = () => {
   const handleOnClickSubmit = () => {
     const { message, valid } = validateDependencies(value);
     console.log(message, valid);
+
+    if (!valid) {
+      setError(!valid);
+      setHelperText(message);
+    } else {
+      setData({
+        nodes: [],
+        links: [],
+      });
+    }
   };
 
   return (

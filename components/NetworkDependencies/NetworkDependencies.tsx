@@ -1,17 +1,20 @@
 import { ResponsiveNetwork } from '@nivo/network'
-import data from '../../mocks/data.json';
 import Box from "@mui/material/Box";
+import { Network } from '../../types/dependency';
 
-const NetworkDependencies = () => {
+interface NetworkDependenciesProps {
+  data?: Network
+}
 
-  return (
-    <Box 
-      sx={{ 
-        height: 456,
-        border: '1px solid rgba(0, 0, 0, 0.23)',
-        borderRadius: 1
-      }}
-    >
+const NetworkDependencies = ({ data }: NetworkDependenciesProps) => (
+  <Box 
+    sx={{ 
+      height: 456,
+      border: '1px solid rgba(0, 0, 0, 0.23)',
+      borderRadius: 1
+    }}
+  >
+    {data && (
       <ResponsiveNetwork
         data={data}
         linkDistance={(e: any) => e.distance}
@@ -34,8 +37,8 @@ const NetworkDependencies = () => {
         linkBlendMode="multiply"
         motionConfig="wobbly"
       />
-    </Box>
-  );
-};
+    )}
+  </Box>
+);
 
 export default NetworkDependencies;
